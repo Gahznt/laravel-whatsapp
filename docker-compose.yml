@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  www:
+      build: .
+      restart: always
+      ports:
+          - '80:80'
+      volumes:
+        - ./laravel-whatsapp:/var/www/html
+      networks:
+        - default
+  db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: zap_db
+      MYSQL_USER: zap_db_user
+      MYSQL_PASSWORD: zap_db_password
+      MYSQL_ROOT_PASSWORD: zap_db_password_root
+    volumes: 
+      - db_data:/var/lib/mysql
+    networks:
+      - default
+volumes:
+  db_data:

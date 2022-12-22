@@ -21,7 +21,7 @@ RUN a2enmod rewrite
 # RUN mkdir -p /var/www/storage/logs && touch /var/www/storage/logs/laravel.log && chmod 777 /var/www/storage/logs/laravel.log && php artisan key:generate
 # RUN chown -R www-data:www-data *
 # RUN php artisan key:generate
-# RUN chmod -R ugo+rw storage
+RUN chmod -R ugo+rw storage
 # RUN chmod o+w ./storage/ -R
 # RUN chmod 755 /var/www/html/public/assets/img/avatars
 # RUN chown www-data:www-data /var/www/html/public/assets/img/avatars

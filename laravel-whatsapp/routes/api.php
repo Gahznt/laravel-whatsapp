@@ -13,3 +13,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+use App\Http\Controllers\WhatsappController;
+
+
+
+
+Route::post('/enviar-mensagem', [WhatsappController::class, 'sendMessage']);
+
+Route::post('/webhook', [WhatsappController::class, 'webhook']);
